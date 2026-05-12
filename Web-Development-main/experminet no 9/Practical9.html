@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MHT-CET Registration Form</title>
+    <h3>Name: Ruchita Patil</h3>
+    <h3>Roll No: 40</h3>
+    <h3>Branch: CSE(A)</h3>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container, .success-box {
+            width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px gray;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .inline {
+            width: auto;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #4facfe;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #007bff;
+        }
+
+        .success-box {
+            display: none;
+            text-align: center;
+        }
+
+        .success-box h2 {
+            color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+ 
+<div class="container" id="formBox">
+    <h2>MHT-CET Registration</h2>
+
+    <form onsubmit="return showSuccess()">
+
+        <label>Full Name</label>
+        <input type="text" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Password</label>
+        <input type="password" required>
+
+        <label>Date of Birth</label>
+        <input type="date" required>
+
+        <label>Phone Number</label>
+        <input type="tel" required>
+
+        <label>Gender</label><br>
+        <input type="radio" name="gender" class="inline"> Male
+        <input type="radio" name="gender" class="inline"> Female
+        <input type="radio" name="gender" class="inline"> Other
+        <br><br>
+
+        <label>Category</label>
+        <select required>
+            <option value="">Select</option>
+            <option>General</option>
+            <option>OBC</option>
+            <option>SC</option>
+            <option>ST</option>
+        </select>
+
+        <label>Subjects</label><br>
+        <input type="checkbox" class="inline"> Physics<br>
+        <input type="checkbox" class="inline"> Chemistry<br>
+        <input type="checkbox" class="inline"> Mathematics<br>
+        <input type="checkbox" class="inline"> Biology<br><br>
+
+        <label>Select State</label>
+        <select>
+            <option>Maharashtra</option>
+            <option>Gujarat</option>
+            <option>Karnataka</option>
+        </select>
+
+        <label>Upload Photo</label>
+        <input type="file">
+
+        <label>Address</label>
+        <textarea></textarea>
+
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
+ 
+<div class="success-box" id="successBox">
+    <h2>Registration Successful 🎉</h2>
+    <p>Your MHT-CET form has been submitted successfully.</p>
+
+    <button onclick="resetForm()">Submit Another Response</button>
+</div>
+
+<script>
+    function showSuccess() {
+        document.getElementById("formBox").style.display = "none";
+        document.getElementById("successBox").style.display = "block";
+        return false;
+    }
+
+    function resetForm() {
+        location.reload();
+    }
+</script>
+
+</body>
+</html>
+
+
+
